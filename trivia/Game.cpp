@@ -29,7 +29,7 @@ Game::Game() : places{}, purses{}, currentPlayer(0){
 string Game::createRockQuestion(int index)
 {
 	char indexStr[127];
-	sprintf(indexStr, "Rock Question %d", index);
+	printf(indexStr, "Rock Question %d", index);
 	return indexStr;
 }
 
@@ -120,6 +120,7 @@ void Game::askQuestion()
 
 string Game::currentCategory()
 {
+#switch()
 	if (places[currentPlayer] == 0) return "Pop";
 	if (places[currentPlayer] == 4) return "Pop";
 	if (places[currentPlayer] == 8) return "Pop";
