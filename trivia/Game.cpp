@@ -120,17 +120,23 @@ void Game::askQuestion()
 
 string Game::currentCategory()
 {
-#switch()
-	if (places[currentPlayer] == 0) return "Pop";
-	if (places[currentPlayer] == 4) return "Pop";
-	if (places[currentPlayer] == 8) return "Pop";
-	if (places[currentPlayer] == 1) return "Science";
-	if (places[currentPlayer] == 5) return "Science";
-	if (places[currentPlayer] == 9) return "Science";
-	if (places[currentPlayer] == 2) return "Sports";
-	if (places[currentPlayer] == 6) return "Sports";
-	if (places[currentPlayer] == 10) return "Sports";
-	return "Rock";
+    switch(places[currentPlayer]){
+        case 0: [[fallthrough]];
+        case 4: [[fallthrough]];
+        case 8:
+            return "Pop";
+
+        case 1: [[fallthrough]];
+        case 5: [[fallthrough]];
+        case 9:
+            return "Science";
+
+        case 2: [[fallthrough]];
+        case 6: [[fallthrough]];
+        case 10:
+            return "Sports";
+        return "Rock"
+    }
 }
 
 bool Game::wasCorrectlyAnswered()
